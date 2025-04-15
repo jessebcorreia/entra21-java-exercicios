@@ -19,14 +19,12 @@ public class L05_E06_VerificarFatorial {
         System.out.println( verificarFatorial(num1, num2) );
     }
 
+    // Refatoração para cálculo do fatorial de forma recursiva
     public static int calcularFatorial(int num){
-        int fatorial = 1;
+        if (num == 0 || num == 1)
+            return 1;
 
-        for (int i = 2; i <= num; i++) {
-            fatorial *= i;
-        }
-
-        return  fatorial;
+        return num * calcularFatorial(num - 1);
     }
 
     public static String verificarFatorial(int n1, int n2){
